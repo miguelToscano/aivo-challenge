@@ -1,8 +1,8 @@
 import flask
-import pandas as pd
 
 from services import indicators as indicators_service
 from validators import indicators as indicators_validator
+
 app = flask.Flask('aivo-challenge')
 
 @app.route('/indicators', methods = ['GET'])
