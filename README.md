@@ -7,7 +7,8 @@
 
 - Clone this repository
 - `cd CURRENT_PATH/aivo-challenge`
-- run `pip3 install -r requirements.txt`
+- Create and activate a virtual environment
+- Run `pip3 install -r requirements.txt`
 
 ## Run
 
