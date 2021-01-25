@@ -8,10 +8,19 @@ app = flask.Flask('aivo-challenge')
 @app.route('/indicators', methods = ['GET'])
 def get_columns():
     
-    return flask.make_response(
-        flask.jsonify({ 'indicators' : indicators_service.get_indicators()}),
-        200,
-    )
+    try:
+
+        return flask.make_response(
+            flask.jsonify({ 'indicators' : indicators_service.get_indicators()}),
+            200,
+        )
+
+    except Exception as error:
+
+        return flask.make_response(
+            flask.jsonify({ 'message': error.args[0] }),
+            error.args[1],
+        )
 
 @app.route('/inequality', methods = ['GET'])
 def get_inequality():
